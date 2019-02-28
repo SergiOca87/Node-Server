@@ -1,6 +1,9 @@
 const express = require('express');
 const ejs = require('ejs');
 
+//The or is used for when a variable does not exist, like when we are in Local
+const port = process.env.PORT || 3000;
+
 const app = express();
 
 //set the templating engine
@@ -30,6 +33,6 @@ app.get('/about', (req, res) => {
     }); 
 });
 
-app.listen(3000, () => {
-    console.log('Server is running at port 3000');
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
