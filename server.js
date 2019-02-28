@@ -33,6 +33,15 @@ app.get('/about', (req, res) => {
     }); 
 });
 
+//Badges
+app.get('/badges', (req, res) => {
+    res.render('about', {
+        //This Object can get injected in our template
+        title: 'Badges',
+        description: 'This is the badges Page'
+    }); 
+});
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
